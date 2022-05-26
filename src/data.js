@@ -1,3 +1,3 @@
-const API = "http://www.omdbapi.com/?apikey=de02409d";
+const API = "https://www.omdbapi.com/?apikey=de02409d";
 
 export { API };
