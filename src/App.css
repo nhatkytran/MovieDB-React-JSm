@@ -36,3 +36,104 @@
     transform: rotate(360deg);
   }
 }
+
+.App {
+  border: 1px solid black;
+  margin: 50px;
+  padding: 20px;
+}
+
+.home > * {
+  margin: 20px;
+}
+
+.movies {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.movie,
+.movie:visited,
+.movie:active {
+  height: 240px;
+  color: black;
+  text-decoration: none;
+  border: 1px solid black;
+  box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
+  transform: translateY(var(--movie-Y, 0));
+  transition: all ease 0.2s;
+  cursor: pointer;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  position: relative;
+}
+
+.movie:hover {
+  --movie-Y: -2px;
+  box-shadow: 0 6px 3px rgba(0, 0, 0, 0.3);
+}
+
+.movie:hover .overlay {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  transition: all ease 0.2s;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  opacity: 0;
+  pointer-events: none;
+}
+
+.movie-name {
+  color: #fff;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination > * {
+  margin: 8px;
+}
+
+.page {
+  background-color: #eee;
+  padding: 4px 8px;
+  border: 1px solid black;
+  border-radius: 6px;
+}
+
+.main-poster {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.image-container {
+  width: 40%;
+}
+
+.poster-info {
+  width: 60%;
+  text-align: left;
+  padding: 20px;
+}
